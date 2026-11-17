@@ -18,15 +18,23 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Configure Android SDK 35
+        run: |
+          SDK_DIR="${ANDROID_HOME:-/usr/local/lib/android/sdk}"
+          echo "ANDROID_HOME=$SDK_DIR" >> "$GITHUB_ENV"
+          SDKMGR="$(command -v sdkmanager || echo "$SDK_DIR/cmdline-tools/latest/bin/sdkmanager")"
+          if [ ! -x "$SDKMGR" ]; then
+            SDKMGR="$(find "$SDK_DIR" -name sdkmanager -type f 2>/dev/null | head -n 1)"
+          fi
+          { yes || true; } | "$SDKMGR" --licenses >/dev/null
+          "$SDKMGR" "platform-tools" "platforms;android-35" "build-tools;35.0.0"
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.11.1'
 
-      - name: Detect Android project root and build Debug APK
+      - name: Build Debug APK
         run: |
           if [ -f "android-app/build.gradle.kts" ]; then
             cd android-app
