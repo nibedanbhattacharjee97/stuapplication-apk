@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Anudip Student Care</string>
+    <string name="bot_welcome_title">Welcome To Anudip Student Bot</string>
+    <string name="bot_title">Anudip Student Bot</string>
+    <string name="role_prompt">Please tell us who you are to continue</string>
+    <string name="new_student_label">🧑‍🎓 New Student</string>
+    <string name="existing_student_label">🎓 Existing Student</string>
+    <string name="change_button">⬅ Change</string>
+    <string name="submit_button">✅ Submit</string>
+    <string name="submit_another_entry">⬅ Submit Another Entry</string>
+    <string name="no_internet_banner">No internet connection. Please check your network and try again.</string>
+</resources>

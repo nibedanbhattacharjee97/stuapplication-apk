@@ -1,0 +1,6 @@
+{
+  "name": "Anudip Student Care",
+  "description": "Native Android Kotlin & Jetpack Compose application for Anudip Student Bot & Care, faithfully reproducing the Anudip Student web experience with offline-ready architecture and secure API bridge.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
